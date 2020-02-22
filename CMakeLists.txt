@@ -1,11 +1,11 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_STANDARD 17)
 project(json-rpc-cxx VERSION 0.0.1 LANGUAGES CXX)
-
 
 option(COMPILE_TESTS "Enable tests" ON)
 option(COMPILE_EXAMPLES "Enable examples" ON)
 option(CODE_COVERAGE "Enable coverage reporting" OFF)
+option(DOXYGEN "Build documentation" ON)
 
 include(GNUInstallDirs)
 
@@ -36,5 +36,26 @@ if (COMPILE_EXAMPLES)
     add_test(NAME example COMMAND example-warehouse)
 endif ()
 
+
+
+# check if Doxygen is installed
+find_package(Doxygen)
+if (DOXYGEN_FOUND)
+    # set input and output files
+    set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/doc/Doxyfile.in)
+    set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
+
+    # request to configure the file
+    configure_file(${DOXYGEN_IN} ${DOXYGEN_OUT})
+
+    # note the option ALL which allows to build the docs together with the application
+    add_custom_target( doc ALL
+        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+        COMMENT "Generating API documentation with Doxygen"
+        VERBATIM )
+else (DOXYGEN_FOUND)
+  message("Doxygen need to be installed to generate the doxygen documentation")
+endif (DOXYGEN_FOUND)
 
 

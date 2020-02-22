@@ -4,6 +4,7 @@ Debug/*
 ConsoleApplication1/Debug/*
 tests/Debug/*
 build/*
+build-clang/*
 .vscode/*
 build*/*
 cmake-build-*/*
