@@ -4,9 +4,8 @@
 [![CircleCI](https://circleci.com/gh/AxelZschutschke/json-rpc-cxx.svg?style=svg)](https://circleci.com/gh/AxelZschutschke/json-rpc-cxx)
 ![GitHub](https://img.shields.io/github/license/AxelZschutschke/json-rpc-cxx.svg)
 [![codecov](https://codecov.io/gh/AxelZschutschke/json-rpc-cxx/branch/master/graph/badge.svg)](https://codecov.io/gh/AxelZschutschke/json-rpc-cxx)
-[![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/jsonrpcx/json-rpc-cxx.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jsonrpcx/json-rpc-cxx/context:cpp)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/16b095ad49964288b524bc0b499c4efb)](https://www.codacy.com/app/cinemast/json-rpc-cxx?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jsonrpcx/json-rpc-cxx&amp;utm_campaign=Badge_Grade)
-![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/jsonrpcx/json-rpc-cxx.svg)
+[![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/AxelZschutschke/json-rpc-cxx.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/AxelZschutschke/json-rpc-cxx/context:cpp)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/AxelZschutschke/json-rpc-cxx.svg)
 
 ![json-rpc-cxx-icon](doc/icon.png)
 
