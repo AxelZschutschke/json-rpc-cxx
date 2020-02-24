@@ -4,7 +4,6 @@
 [![CircleCI](https://circleci.com/gh/AxelZschutschke/json-rpc-cxx.svg?style=svg)](https://circleci.com/gh/AxelZschutschke/json-rpc-cxx)
 ![GitHub](https://img.shields.io/github/license/AxelZschutschke/json-rpc-cxx.svg)
 [![codecov](https://codecov.io/gh/AxelZschutschke/json-rpc-cxx/branch/master/graph/badge.svg)](https://codecov.io/gh/AxelZschutschke/json-rpc-cxx)
-[![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/AxelZschutschke/json-rpc-cxx.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/AxelZschutschke/json-rpc-cxx/context:cpp)
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/AxelZschutschke/json-rpc-cxx.svg)
 
 ![json-rpc-cxx-icon](doc/icon.png)
