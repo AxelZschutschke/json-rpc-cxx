@@ -2,7 +2,7 @@
 
 
 [![Build status](https://ci.appveyor.com/api/projects/status/c6rv869h984m1eo2?svg=true)](https://ci.appveyor.com/project/cinemast/json-rpc-cxx)
-[![CircleCI](https://circleci.com/gh/AxelZschutschke/json-rpc-cxx/json-rpc-cxx.svg?style=svg)](https://circleci.com/gh/jsonrpcx/json-rpc-cxx)
+[![CircleCI](https://circleci.com/gh/AxelZschutschke/json-rpc-cxx.svg?style=svg)](https://circleci.com/gh/jsonrpcx/json-rpc-cxx)
 ![GitHub](https://img.shields.io/github/license/jsonrpcx/json-rpc-cxx.svg)
 [![codecov](https://codecov.io/gh/jsonrpcx/json-rpc-cxx/branch/master/graph/badge.svg)](https://codecov.io/gh/jsonrpcx/json-rpc-cxx)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/jsonrpcx/json-rpc-cxx.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jsonrpcx/json-rpc-cxx/context:cpp)
