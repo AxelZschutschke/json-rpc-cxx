@@ -7,6 +7,12 @@
 namespace jsonrpccxx {
   typedef nlohmann::json json;
 
+  /*!
+   * \brief check if provided json object contains a certain key
+   * \param[in] v json object to be searched
+   * \param[in] key string to be searched for (representing a map key)
+   * \returns true if key is found in object, false if key is not found
+   */
   static inline bool has_key(const json &v, const std::string &key) { return v.find(key) != v.end(); }
   static inline bool has_key_type(const json &v, const std::string &key, json::value_t type) { return has_key(v, key) && v.at(key).type() == type; }
   static inline bool valid_id(const json &request) {
