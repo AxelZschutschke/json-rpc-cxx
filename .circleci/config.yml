@@ -2,6 +2,28 @@ version: 2.1
 orbs:
   codecov: codecov/codecov@1.0.2
 jobs:
+  "doxygen-linux-gcc":
+    docker:
+      - image: "debian:buster"
+    parallelism: 4
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "6c:f9:3c:2e:be:bf:51:4a:90:4f:39:37:2e:27:e8:99"
+      - checkout
+      - run:
+          name: Clone doc
+          command: 'git clone -branch documentation git@github.com:AxelZschutschke/json-rpc-cxx.git html'
+      - run:
+          name: Installing Doxygen
+          command: 'apt-get update && apt-get install -y doxygen'
+      - run:
+          name: Doxygen
+          command: cmake -DDOXYGEN=ON -DCOMPILE_TESTS=OF -DCOMPILE_EXAMPLES=OFF -DCODE_COVERAGE=OFF . && cmake --build doc
+      - run:
+          name: Commit
+          command: 'cd html && git add -A && git commit -am "$CIRCLE_SHA1" && git push origin documentation:documentation'
+      
   "build-linux-gcc":
     docker:
       - image: "debian:buster"
@@ -13,7 +35,7 @@ jobs:
           command: 'apt-get update && apt-get install -y gcc g++ cmake lcov curl'
       - run:
           name: Build
-          command: cmake -DCOMPILE_TESTS=ON -DCOMPILE_EXAMPLES=ON -DCODE_COVERAGE=ON . && cmake --build .
+          command: cmake -DDOXYGEN=OFF -DCOMPILE_TESTS=ON -DCOMPILE_EXAMPLES=ON -DCODE_COVERAGE=ON . && cmake --build .
       - run:
           name: Run tests
           command: ./jsonrpccpp-test -s
