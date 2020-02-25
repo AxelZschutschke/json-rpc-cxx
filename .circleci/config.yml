@@ -22,7 +22,7 @@ jobs:
           command: 'git clone --branch documentation git@github.com:AxelZschutschke/json-rpc-cxx.git html'
       - run:
           name: Doxygen
-          command: cmake -DDOXYGEN=ON -DCOMPILE_TESTS=OF -DCOMPILE_EXAMPLES=OFF -DCODE_COVERAGE=OFF . && cmake --build doc
+          command: cmake -DDOXYGEN=ON -DCOMPILE_TESTS=OF -DCOMPILE_EXAMPLES=OFF -DCODE_COVERAGE=OFF . && cmake --build . --target doc
       - run:
           name: Commit
           command: 'cd html && git add -A && git commit -am "$CIRCLE_SHA1" && git push origin documentation:documentation'
