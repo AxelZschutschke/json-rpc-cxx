@@ -12,11 +12,11 @@ jobs:
             - "6c:f9:3c:2e:be:bf:51:4a:90:4f:39:37:2e:27:e8:99"
       - checkout
       - run:
+          name: Installing Doxygen
+          command: 'apt-get update && apt-get install -y doxygen git'
+      - run:
           name: Clone doc
           command: 'git clone -branch documentation git@github.com:AxelZschutschke/json-rpc-cxx.git html'
-      - run:
-          name: Installing Doxygen
-          command: 'apt-get update && apt-get install -y doxygen'
       - run:
           name: Doxygen
           command: cmake -DDOXYGEN=ON -DCOMPILE_TESTS=OF -DCOMPILE_EXAMPLES=OFF -DCODE_COVERAGE=OFF . && cmake --build doc
@@ -88,5 +88,4 @@ workflows:
   build:
     jobs:
       - "doxygen-linux-gcc"
-      - "build-linux-gcc"
-      - "build-linux-clang"
+
