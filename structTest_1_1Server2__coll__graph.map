@@ -1,0 +1,6 @@
+<map id="Test::Server2" name="Test::Server2">
+<area shape="rect" id="node2" href="$classTest_1_1TestAPI_1_1TestServerConnector.html" title="Test::TestAPI::TestServer\lConnector" alt="" coords="5,171,184,212"/>
+<area shape="rect" id="node3" href="$classjsonrpccxx_1_1JsonRpc2Server.html" title="jsonrpccxx::JsonRpc2Server" alt="" coords="209,178,410,205"/>
+<area shape="rect" id="node4" href="$classjsonrpccxx_1_1JsonRpcServer.html" title="jsonrpccxx::JsonRpcServer" alt="" coords="213,95,406,121"/>
+<area shape="rect" id="node5" href="$classjsonrpccxx_1_1Dispatcher.html" title="jsonrpccxx::Dispatcher" alt="" coords="224,5,395,32"/>
+</map>

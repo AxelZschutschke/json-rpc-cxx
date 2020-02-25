@@ -1,0 +1,8 @@
+<map id="Test::IntegrationTest::IntegrationTest" name="Test::IntegrationTest::IntegrationTest">
+<area shape="rect" id="node2" href="$classInMemoryConnector.html" title="InMemoryConnector" alt="" coords="5,184,159,211"/>
+<area shape="rect" id="node3" href="$classjsonrpccxx_1_1IClientConnector.html" title="jsonrpccxx::IClientConnector" alt="" coords="149,95,357,121"/>
+<area shape="rect" id="node7" href="$classjsonrpccxx_1_1JsonRpcClient.html" title="jsonrpccxx::JsonRpcClient" alt="" coords="183,184,373,211"/>
+<area shape="rect" id="node4" href="$classjsonrpccxx_1_1JsonRpc2Server.html" title="jsonrpccxx::JsonRpc2Server" alt="" coords="397,184,599,211"/>
+<area shape="rect" id="node5" href="$classjsonrpccxx_1_1JsonRpcServer.html" title="jsonrpccxx::JsonRpcServer" alt="" coords="401,95,595,121"/>
+<area shape="rect" id="node6" href="$classjsonrpccxx_1_1Dispatcher.html" title="jsonrpccxx::Dispatcher" alt="" coords="413,5,583,32"/>
+</map>

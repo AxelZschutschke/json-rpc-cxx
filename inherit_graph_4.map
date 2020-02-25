@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classjsonrpccxx_1_1IClientConnector.html" title="jsonrpccxx::IClientConnector" alt="" coords="5,56,213,83"/>
+<area shape="rect" id="node2" href="$classCppHttpLibClientConnector.html" title="CppHttpLibClientConnector" alt="" coords="261,5,460,32"/>
+<area shape="rect" id="node3" href="$classInMemoryConnector.html" title="InMemoryConnector" alt="" coords="284,56,437,83"/>
+<area shape="rect" id="node4" href="$classTest_1_1TestAPI_1_1TestClientConnector.html" title="Test::TestAPI::TestClient\lConnector" alt="" coords="273,107,448,149"/>
+</map>
