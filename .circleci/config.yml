@@ -16,7 +16,7 @@ jobs:
           command: 'apt-get update && apt-get install -y doxygen git'
       - run:
           name: Clone doc
-          command: 'git clone -branch documentation git@github.com:AxelZschutschke/json-rpc-cxx.git html'
+          command: 'git clone --branch documentation git@github.com:AxelZschutschke/json-rpc-cxx.git html'
       - run:
           name: Doxygen
           command: cmake -DDOXYGEN=ON -DCOMPILE_TESTS=OF -DCOMPILE_EXAMPLES=OFF -DCODE_COVERAGE=OFF . && cmake --build doc
