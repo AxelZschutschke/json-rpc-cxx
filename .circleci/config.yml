@@ -2,6 +2,14 @@ version: 2.1
 orbs:
   codecov: codecov/codecov@1.0.2
 jobs:
+  "dummy":
+    docker:
+      - image: "debian:buster"
+    parallelism: 1    
+    steps:
+      - run:
+         name: noop
+         command: '/bin/true'
   "doxygen-linux-gcc":
     docker:
       - image: "debian:buster"
@@ -90,3 +98,4 @@ workflows:
   version: 2
   build:
     jobs:
+       - dummy
