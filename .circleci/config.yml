@@ -25,7 +25,7 @@ jobs:
           command: cmake -DDOXYGEN=ON -DCOMPILE_TESTS=OF -DCOMPILE_EXAMPLES=OFF -DCODE_COVERAGE=OFF . && cmake --build . --target doc
       - run:
           name: Commit
-          command: "cd html && git add -A && git commit -am $CIRCLE_SHA1 && git push origin gh-pages:gh-pages"
+          command: "cd html && git add -A && git commit -am $CIRCLE_SHA1 && git push origin gh-pages:gh-pages || true"
       
   "build-linux-gcc":
     docker:

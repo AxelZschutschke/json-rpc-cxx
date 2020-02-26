@@ -13,6 +13,8 @@ add_library(json-rpc-cxx INTERFACE)
 target_include_directories(json-rpc-cxx INTERFACE include)
 install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
+message( ${PROJECT_VERSION} )
+
 add_library(coverage_config INTERFACE)
 
 if (COMPILE_TESTS)

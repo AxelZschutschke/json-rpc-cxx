@@ -5,7 +5,9 @@
 # overview 
 
 Document authors: A. Zschutschke
-Last update: 2020/02/16
+
+This document is created as template for teaching purposes, please adapt to
+your own project needs.
 
 Please refer to the [definitions page](\ref Definitions) for details of
 specific key words and phrases.
