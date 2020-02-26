@@ -90,5 +90,15 @@ workflows:
   version: 2
   build:
     jobs:
-      - "doxygen-linux-gcc"
-
+      - "build-linux-clang":
+          branches:
+              ignore:
+                - "documentation"
+      - "build-linux-gcc":
+          branches:
+              ignore:
+                - "documentation"
+      - "doxygen-linux-gcc":
+          branches:
+              ignore:
+                - "documentation"
