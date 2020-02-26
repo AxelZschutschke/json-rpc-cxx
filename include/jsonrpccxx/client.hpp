@@ -1,20 +1,31 @@
 #pragma once
+
 #include "common.hpp"
 #include "iclientconnector.hpp"
+
 #include <exception>
 #include <nlohmann/json.hpp>
 #include <string>
 #include <variant>
 
 namespace jsonrpccxx {
+  /*!
+   * \class version
+   * \brief enum class describing the json-rpc version
+   */
   enum class version { v1, v2 };
+
   typedef std::vector<json> positional_parameter;
   typedef std::map<std::string, json> named_parameter;
   typedef std::variant<int, std::string> id_type;
 
+  /*!
+   * \class JsonRpcResponse
+   * \brief POD holding the json-rpc response data
+   */
   struct JsonRpcResponse {
-    id_type id;
-    json result;
+    id_type id; //!< identifyer of the request/response, represented as string or integer (echoed from request id)
+    json result; //!< the actual result of the remote procedure call, represented as JSON value
   };
 
   class JsonRpcClient {

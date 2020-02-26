@@ -19,13 +19,13 @@ jobs:
           command: 'apt-get update && apt-get install -y cmake gcc g++ curl graphviz doxygen git'
       - run:
           name: Clone doc
-          command: 'git clone --branch documentation git@github.com:AxelZschutschke/json-rpc-cxx.git html && pwd && ls && ls html'
+          command: 'git clone --branch gh-pages git@github.com:AxelZschutschke/json-rpc-cxx.git html'
       - run:
           name: Doxygen
           command: cmake -DDOXYGEN=ON -DCOMPILE_TESTS=OF -DCOMPILE_EXAMPLES=OFF -DCODE_COVERAGE=OFF . && cmake --build . --target doc
       - run:
           name: Commit
-          command: "pwd && ls && ls html && cd html && git add -A && git commit -am $CIRCLE_SHA1 && git push origin documentation:documentation"
+          command: "cd html && git add -A && git commit -am $CIRCLE_SHA1 && git push origin gh-pages:gh-pages"
       
   "build-linux-gcc":
     docker:
