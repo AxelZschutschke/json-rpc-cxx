@@ -25,7 +25,7 @@ jobs:
           command: cmake -DDOXYGEN=ON -DCOMPILE_TESTS=OF -DCOMPILE_EXAMPLES=OFF -DCODE_COVERAGE=OFF . && cmake --build . --target doc
       - run:
           name: Commit
-          command: "pwd && ls && ls html && cd html && git add -A && git commit -am '$CIRCLE_SHA1' && git push origin documentation:documentation"
+          command: "pwd && ls && ls html && cd html && git add -A && git commit -am $CIRCLE_SHA1 && git push origin documentation:documentation"
       
   "build-linux-gcc":
     docker:
@@ -90,15 +90,3 @@ workflows:
   version: 2
   build:
     jobs:
-      - "build-linux-clang":
-        filters:
-          branches:
-              ignore: "documentation"
-      - "build-linux-gcc":
-        filters:
-          branches:
-              ignore: "documentation"
-      - "doxygen-linux-gcc":
-        filters:
-          branches:
-              ignore: "documentation"
