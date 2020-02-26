@@ -91,14 +91,14 @@ workflows:
   build:
     jobs:
       - "build-linux-clang":
-	filters:
+        filters:
           branches:
               ignore: "documentation"
       - "build-linux-gcc":
-	filters:
+        filters:
           branches:
               ignore: "documentation"
       - "doxygen-linux-gcc":
-	filters:
+        filters:
           branches:
               ignore: "documentation"
