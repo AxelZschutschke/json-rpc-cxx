@@ -1,3 +1,0 @@
-# test report {#TestReport}
-
-REPLACEME
