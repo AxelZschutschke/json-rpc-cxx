@@ -90,7 +90,7 @@ workflows:
   version: 2
   build:
     jobs:
-      - "doxygen-linux-gcc":
-        filters:
-          branches:
-              ignore: "documentation"
+      - "doxygen-linux-gcc"
+      - "build-linux-gcc"
+      - "build-linux-clang"
+
