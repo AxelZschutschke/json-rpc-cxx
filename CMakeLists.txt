@@ -13,8 +13,6 @@ add_library(json-rpc-cxx INTERFACE)
 target_include_directories(json-rpc-cxx INTERFACE include)
 install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
-message( ${PROJECT_VERSION} )
-
 add_library(coverage_config INTERFACE)
 
 if (COMPILE_TESTS)
@@ -27,7 +25,7 @@ if (COMPILE_TESTS)
     target_include_directories(jsonrpccpp-test PRIVATE vendor examples)
     target_link_libraries(jsonrpccpp-test coverage_config json-rpc-cxx)
     enable_testing()
-    add_test(NAME test COMMAND jsonrpccpp-test)
+    add_test(NAME catch COMMAND jsonrpccpp-test -r junit -o unit.xml )
 endif ()
 
 if (COMPILE_EXAMPLES)

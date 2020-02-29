@@ -1,8 +1,8 @@
-# test plan {#TestPlan}
+# Test Plan {#TestPlan}
 
 \tableofcontents
 
-# overview 
+# Overview 
 
 Document authors: A. Zschutschke
 
@@ -12,7 +12,7 @@ your own project needs.
 Please refer to the [definitions page](\ref Definitions) for details of
 specific key words and phrases.
 
-## abbreviations
+## Abbreviations
 
 | symbol  | meaning |
 | ------- | ------- |
@@ -20,7 +20,7 @@ specific key words and phrases.
 | DEV     | developer (doubles as tester) |
 | NFR     | non functional requirement |
 
-## introduction
+## Introduction
 
 The test plan is based on the [test strategy](\ref TestStrategy), which it
 translates into concrete test scenarios and time lines. While the test strategy

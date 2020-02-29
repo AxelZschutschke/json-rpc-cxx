@@ -1,4 +1,4 @@
-# definitions {#Definitions}
+# Definitions {#Definitions}
 
 Definitions of certain keywords and phrases used throughout the documentation.
 Partly, these definitions differ slightly from literature as they present the

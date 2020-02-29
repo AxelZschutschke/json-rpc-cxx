@@ -1,8 +1,8 @@
-# test strategy {#TestStrategy}
+# Test Strategy {#TestStrategy}
 
 \tableofcontents
 
-# overview 
+# Overview 
 
 Document authors: A. Zschutschke
 
@@ -12,7 +12,7 @@ your own project needs.
 Please refer to the [definitions page](\ref Definitions) for details of
 specific key words and phrases.
 
-## abbreviations
+## Abbreviations
 
 | symbol  | meaning |
 | ------- | ------- |
@@ -21,7 +21,7 @@ specific key words and phrases.
 | NFR     | non functional requirement |
 
 
-## introduction
+## Introduction
 
 The test documentation gives an overview of test targets, test scope and
 defines and explains the internal notations. Also, an overview of the test
@@ -49,7 +49,7 @@ digraph Timeline
 }
 @enddot
 
-## scope
+## Scope
 
 The test strategy document shall define the goal of all activities related to
 test and quality. It should align all developers, testers and other relevant
@@ -65,7 +65,7 @@ culture of quality awareness and an open error culture. Error reports are
 appreciated at any point of the development cycle to enable transparent defect
 management.
 
-## requirements
+## Requirements
 
 [Requirements](\ref Requirements) can be destinquished into two different
 levels and two different types:
@@ -106,7 +106,7 @@ describing the functionality of the software product.
 silently by stakeholders. They must be asked explitely from stakeholders and some
 must be formulated by development.
 
-## test approach
+## Test Approach
 
 Facing the requirements of continuous integration, the test process must be
 adapted.  Here, methods of continuous testing will be applied to ensure a high
@@ -115,7 +115,7 @@ level of quality of the product while keeping the pace of modern development.
 **Continuos testing** is a pipeline strategy, not bound to dedicated testing
 phases and with different closed feedback loops. [1]
 
-## legal / regulations
+## Legal / Regulations
 
 The test procedure also takes legal aspects into considerations, including the
 (redistributable) license status of all components used, legal regulations for
@@ -127,7 +127,7 @@ product, as they have different and potentially very restrictive license types.
 Also, law is very specific with respect to using these components, as the full
 test responsibility is remaining by the product using the open source software.
 
-## test levels
+## Test Levels
 
 There are four levels of testing considered in this project:
 * unit test
@@ -143,7 +143,7 @@ test levels are not bound to software test alone but also include documentation
 and design as well as all other (testable) artifacts, prepared during product
 development.
 
-### unit test
+### Unit Test
 
 Test of the smallest building blocks of the software. The test focusses on a
 single method or class, calling a public interface and evaluating its result.
@@ -159,7 +159,7 @@ out to ensure sharpness of the test. Unit tests are completely automated,
 consistent and fast, which makes them available for regression testing on a
 daily basis.
 
-### integration test
+### Integration Test
 
 The integration test very similar to an unit test. The main difference is that
 the integration test is not actively avoiding internal dependencies, while
@@ -167,7 +167,7 @@ still not openly relying on external dependencies. Target is to verify the
 correct interaction and collaboration of the internal components via their
 interfaces.
 
-### sub-system test
+### Sub-System Test
 
 The unit and integration test extract parts of the software and create a
 "virtual" environment for the tests to run in. The sub-system test shall partly
@@ -175,7 +175,7 @@ overcome this limitation and test the individual packages of the final product
 as shipped, while still simulating parts of the interaction of other packages
 and/or hardware.
 
-### system test
+### System Test
 
 The system test shall test the product under real world conditions, with all
 external and internal components in place and on the target hardware. As this
@@ -183,7 +183,7 @@ would create an infinite number of test scenarios with different environments
 and component versions, dedicated test scenarios need to be identified, which
 shall represent all imaginable combinations.
 
-## roles and responsibilities
+## Roles and Responsibilities
 
 Any team member of the developer team can take on one or more of the following
 roles for his/her work. Sometimes, it may be beneficial to employ dedicated 
@@ -201,13 +201,13 @@ The development team should staff the following roles:
 * several **developers**
 * several **testers**
 
-## types of testing
+## Types of Testing
 
 * white box
 * black box
 * static
 
-## explorative testing
+## Explorative Testing
 
 Next to the thoroughly planned test tasks during sub-system and system test
 a less restricted approach is explorative testing. This approach is used to
@@ -222,7 +222,7 @@ is filled prior to testing, so that in case of an finding, a complete error
 report can be created with ease and no questions about the actual situation
 and versions arrise. 
 
-## security testing
+## Security Testing
 
 Security in terms of data security and ITSec is an crucial part of any modern
 system. Special care must be taken to ensure the secure and uninterrupted
@@ -233,25 +233,25 @@ The test activities with respect to security shall be conducted by specially
 trained professionals. The budget and time for this analysis must be planned
 early in the project.
  
-# environment
-## test object
+# Environment
+## Test Object
 
 * description of the product, its application and use cases
 * requirements of the product towards its execution environment
 
-## physical environment (target)
+## Physical Environment (target)
 
 * description of the (hardware) target platform for the (software) product
 * required system resources
 * discussion of specific aspects and risks (cross-compiling, reduced system resources...)
 * availabilty (and discussion of quality) of the hardware and virtual environments
 
-## software environment
+## Software Environment
 
 * interaction with base / operating system
 * description of external and interface components
 
-## test tools
+## Test Tools
 
 For different levels of testing, different tools and environments are utilized.
 For unit- and integration tests, a unit test and isolation framework is used,
@@ -269,7 +269,7 @@ the artifacts are executed in a virtual (sub-system test) environment or on
 the actual target (system test), which creates a set of obstacles, especially
 for test automation.
 
-## reporting
+## Reporting
 
 The tools used for testing create a junit-style test result file in xml format.
 The coverage is presented as raw coverage file, as generated by the coverage
@@ -289,12 +289,12 @@ project. The documentation shall include:
 Using this approach, a complete and archivable artifact is created without 
 external dependencies.
 
-## defect tracking
+## Defect Tracking
 
 * tool used for defect tracking and brief description
 
-# definition of done
-## reviews
+# Definition of Done
+## Reviews
 
 Reviews shall be carried out for all design documentation and all implemented
 code, be it production or test code. For test code, a walkthrough is sufficient
@@ -302,7 +302,7 @@ as review, for design documents and production code (inluding the code
 generated by pair-programming), a dedicated peer review shall be carried out by
 at least one peer.
 
-## coverage
+## Coverage
 
 As the test process has no natural completed critereon, the test coverage is
 used as end-of test indicator for the low level test types (unit and
@@ -319,7 +319,7 @@ be tested by at least one test scenario, specifically designed for this
 requirement. Requirements may be tested on lower test levels, which would make
 a re-test on system level optional.
 
-## automation
+## Automation
 
 The project aims for a high degree of test automation. For unit and low-level
 integration testing, full automation shall be reached (100% of tests). For
@@ -329,18 +329,18 @@ to ensure repeatability and expressiveness of the test result. The test then
 may be carried out manually, following the questionaire. Overall, 80 % of test
 cases shall be automated.
 
-## reporting
+## Reporting
 
 The product documentation, release notes and test report are sent to the test
 manager for review and approval **1 week** before the planned release.
 
-## documentation
+## Documentation
 
 The changelog for the current release is present and the user documentation is
 updated. A review is carried out in peer review manner and no open points review
 findings are remaining.  
 
-## defect management
+## Defect management
 
 The defect management includes all steps from adding newly found defects to the
 defect tracking tool, the defect triage, fixing the source location, retesting
@@ -350,14 +350,14 @@ a time schedule. The defect will be rated regarding its severity. For defects
 of medium and high severity, the release documentations need to be adapted, for
 announcing the issue to users.
 
-# considerations
-## risks
+# Considerations
+## Risks
 
 * test hardware availability
 * test team members
 * ...?
 
-## staffing
+## Staffing
 
 | role | name | email |
 | ---- | ---- | ----- |
@@ -370,10 +370,10 @@ announcing the issue to users.
 | tester | | |
 | ... | | |
  
-## training needs
+## Training Needs
 
 * test manager needs more training
 * new employed testers shall take training XY
 
-# references
+# References
 [1] P. Zimmerer, The Future of Testing is Continuous, OOP 2019

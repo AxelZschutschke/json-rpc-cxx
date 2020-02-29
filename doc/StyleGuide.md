@@ -1,3 +1,3 @@
-# code style guide {#StyleGuide}
+# Code Style Guide {#StyleGuide}
 
 

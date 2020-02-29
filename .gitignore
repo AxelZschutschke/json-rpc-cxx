@@ -9,3 +9,4 @@ build-clang/*
 build*/*
 cmake-build-*/*
 .idea/*
+*.swp
