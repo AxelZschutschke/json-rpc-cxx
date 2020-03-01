@@ -81,6 +81,7 @@ if( CPPCHECK )
       COMMAND ${CPPCHECK_HTML_EXECUTABLE} ${CPPCHECK_HTML_OUT} ${CPPCHECK_HTML_OPTIONS} ${CPPCHECK_HTML_INCLUDE_DIRS}
       COMMENT "Running cppcheck-htmlreport"
       VERBATIM )
+    add_dependencies( cppcheck-htmlreport cppcheck )
   else()
     message( "cppcheck-htmlreport need to be installed to generate the cppcheck html report" )
   endif()
