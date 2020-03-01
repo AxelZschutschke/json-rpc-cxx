@@ -72,6 +72,18 @@ if( CPPCHECK )
   else()
     message( "cppcheck need to be installed to generate the cppcheck report" )
   endif()
+  find_program( CPPCHECK_HTML_EXECUTABLE NAMES cppcheck-htmlreport )
+  if( CPPCHECK_HTML_EXECUTABLE )
+    set(CPPCHECK_HTML_INCLUDE_DIRS --source-dir=${CMAKE_CURRENT_SOURCE_DIR} )
+    set(CPPCHECK_HTML_OPTIONS --file=${CMAKE_CURRENT_BINARY_DIR}/cppcheck.xml )
+    set(CPPCHECK_HTML_OUT --report-dir=html )
+    add_custom_target( cppcheck-htmlreport ALL
+      COMMAND ${CPPCHECK_HTML_EXECUTABLE} ${CPPCHECK_HTML_OUT} ${CPPCHECK_HTML_OPTIONS} ${CPPCHECK_HTML_INCLUDE_DIRS}
+      COMMENT "Running cppcheck-htmlreport"
+      VERBATIM )
+  else()
+    message( "cppcheck-htmlreport need to be installed to generate the cppcheck html report" )
+  endif()
 endif()
 
 if( CCCC )
