@@ -7,6 +7,7 @@ option(COMPILE_EXAMPLES "Enable examples" ON)
 option(CODE_COVERAGE "Enable coverage reporting" OFF)
 option(DOXYGEN "Build documentation" ON)
 option(CPPCHECK "Enable cppcheck" OFF)
+option(CCCC "Enable cccc" OFF)
 
 include(GNUInstallDirs)
 include(ExternalProject)
@@ -70,6 +71,22 @@ if( CPPCHECK )
       VERBATIM )
   else()
     message( "cppcheck need to be installed to generate the cppcheck report" )
+  endif()
+endif()
+
+if( CCCC )
+  find_program( CCCC_EXECUTABLE NAMES cccc )
+  if( CCCC_EXECUTABLE )
+    file(GLOB CCCC_IN ${CMAKE_CURRENT_SOURCE_DIR} )
+    set(CCCC_INCLUDE_DIRS -I${CMAKE_CURRENT_SOURCE_DIR} -I${CMAKE_CURRENT_SOURCE_DIR}/include -I${CMAKE_CURRENT_SOURCE_DIR}/vendor -I${CMAKE_CURRENT_SOURCE_DIR}/examples )
+    set(CCCC_OPTIONS  --lang=c++ )
+    set(CCCC_OUT --outdir=${CMAKE_CURRENT_BINARY_DIR} --html_outfile=cccc.html )
+    add_custom_target( cccc ALL
+      COMMAND ${CCCC_EXECUTABLE} ${CCCC_OUT} ${CCCC_OPTIONS} ${CCCC_INCLUDE_DIRS} ${CCCC_IN}
+      COMMENT "Running cccc"
+      VERBATIM )
+  else()
+    message( "cccc need to be installed to generate the cccc report" )
   endif()
 endif()
 
