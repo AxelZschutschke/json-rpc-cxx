@@ -92,7 +92,7 @@ if( CCCC )
     file(GLOB CCCC_IN ${CMAKE_CURRENT_SOURCE_DIR} )
     set(CCCC_INCLUDE_DIRS -I${CMAKE_CURRENT_SOURCE_DIR} -I${CMAKE_CURRENT_SOURCE_DIR}/include -I${CMAKE_CURRENT_SOURCE_DIR}/vendor -I${CMAKE_CURRENT_SOURCE_DIR}/examples )
     set(CCCC_OPTIONS  --lang=c++ )
-    set(CCCC_OUT --outdir=${CMAKE_CURRENT_BINARY_DIR} --html_outfile=cccc.html )
+    set(CCCC_OUT --outdir=${CMAKE_CURRENT_BINARY_DIR}/cccc --html_outfile=${CMAKE_CURRENT_BINARY_DIR}/cccc/cccc.html )
     add_custom_target( cccc ALL
       COMMAND ${CCCC_EXECUTABLE} ${CCCC_OUT} ${CCCC_OPTIONS} ${CCCC_INCLUDE_DIRS} ${CCCC_IN}
       COMMENT "Running cccc"
