@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quality_20attributes',['quality attributes',['../QualityAttributes.html',1,'']]]
+  ['quality_20attributes',['Quality Attributes',['../QualityAttributes.html',1,'']]]
 ];

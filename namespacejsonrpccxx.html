@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -45,6 +52,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('namespacejsonrpccxx.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,7 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -118,13 +139,16 @@ typedef nlohmann::json&#160;</td><td class="memItemRight" valign="bottom"><b>jso
 typedef std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>NamedParamMapping</b></td></tr>
 <tr class="separator:aca17a8cf161709ff7ee46b3e0882c196"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5345b20f4bddc4966190805582a4612"><td class="memItemLeft" align="right" valign="top"><a id="aa5345b20f4bddc4966190805582a4612"></a>
-typedef std::vector&lt; json &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Parameters</b></td></tr>
+typedef std::vector&lt; json &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejsonrpccxx.html#aa5345b20f4bddc4966190805582a4612">Parameters</a></td></tr>
+<tr class="memdesc:aa5345b20f4bddc4966190805582a4612"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable amount of json (variate) parameters <br /></td></tr>
 <tr class="separator:aa5345b20f4bddc4966190805582a4612"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd853e802939299ead7029a5038e38a8"><td class="memItemLeft" align="right" valign="top"><a id="acd853e802939299ead7029a5038e38a8"></a>
-typedef std::function&lt; json(const Parameters &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>MethodHandle</b></td></tr>
+typedef std::function&lt; json(const <a class="el" href="namespacejsonrpccxx.html#aa5345b20f4bddc4966190805582a4612">Parameters</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejsonrpccxx.html#acd853e802939299ead7029a5038e38a8">MethodHandle</a></td></tr>
+<tr class="memdesc:acd853e802939299ead7029a5038e38a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">rpc callback type returning a json <br /></td></tr>
 <tr class="separator:acd853e802939299ead7029a5038e38a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bc83bf0cfbb2c4490746c9caba6b771"><td class="memItemLeft" align="right" valign="top"><a id="a5bc83bf0cfbb2c4490746c9caba6b771"></a>
-typedef std::function&lt; void(const Parameters &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>NotificationHandle</b></td></tr>
+typedef std::function&lt; void(const <a class="el" href="namespacejsonrpccxx.html#aa5345b20f4bddc4966190805582a4612">Parameters</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejsonrpccxx.html#a5bc83bf0cfbb2c4490746c9caba6b771">NotificationHandle</a></td></tr>
+<tr class="memdesc:a5bc83bf0cfbb2c4490746c9caba6b771"><td class="mdescLeft">&#160;</td><td class="mdescRight">rpc callback type returning void <br /></td></tr>
 <tr class="separator:a5bc83bf0cfbb2c4490746c9caba6b771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -177,9 +201,10 @@ constexpr json::value_t&#160;</td><td class="memItemRight" valign="bottom"><b>Ge
 <tr class="memitem:a4703bdfc034437f1aa0fb6da3929463d"><td class="memItemLeft" align="right" valign="top"><a id="a4703bdfc034437f1aa0fb6da3929463d"></a>
 constexpr json::value_t&#160;</td><td class="memItemRight" valign="bottom"><b>GetType</b> (<a class="el" href="structjsonrpccxx_1_1type.html">type</a>&lt; unsigned long &gt;)</td></tr>
 <tr class="separator:a4703bdfc034437f1aa0fb6da3929463d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f34047b0b5cc49b1dd13dd48e1338cb"><td class="memItemLeft" align="right" valign="top"><a id="a1f34047b0b5cc49b1dd13dd48e1338cb"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>type_name</b> (json::value_t t)</td></tr>
-<tr class="separator:a1f34047b0b5cc49b1dd13dd48e1338cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4372ea33b5f454bb5562df6580add3e0"><td class="memItemLeft" align="right" valign="top"><a id="a4372ea33b5f454bb5562df6580add3e0"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejsonrpccxx.html#a4372ea33b5f454bb5562df6580add3e0">type_name</a> (json::value_t const &amp;t)</td></tr>
+<tr class="memdesc:a4372ea33b5f454bb5562df6580add3e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">get string representation of a json::value_t object <br /></td></tr>
+<tr class="separator:a4372ea33b5f454bb5562df6580add3e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3302ab1cac1a8bc662caf56a86eb31c"><td class="memTemplParams" colspan="2"><a id="ac3302ab1cac1a8bc662caf56a86eb31c"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ac3302ab1cac1a8bc662caf56a86eb31c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>check_param_type</b> (size_t index, const json &amp;x, json::value_t expectedType, typename std::enable_if&lt; std::is_arithmetic&lt; T &gt;::value &gt;::<a class="el" href="structjsonrpccxx_1_1type.html">type</a> *=0)</td></tr>
@@ -190,53 +215,57 @@ template&lt;typename T &gt; </td></tr>
 <tr class="separator:ad9482b337c3f8665fede5137244d99da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add6ed67c6850e801e8b41c1ed9ee0d35"><td class="memTemplParams" colspan="2"><a id="add6ed67c6850e801e8b41c1ed9ee0d35"></a>
 template&lt;typename ReturnType , typename... ParamTypes, std::size_t... index&gt; </td></tr>
-<tr class="memitem:add6ed67c6850e801e8b41c1ed9ee0d35"><td class="memTemplItemLeft" align="right" valign="top">MethodHandle&#160;</td><td class="memTemplItemRight" valign="bottom"><b>createMethodHandle</b> (std::function&lt; ReturnType(ParamTypes...)&gt; method, std::index_sequence&lt; index... &gt;)</td></tr>
+<tr class="memitem:add6ed67c6850e801e8b41c1ed9ee0d35"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacejsonrpccxx.html#acd853e802939299ead7029a5038e38a8">MethodHandle</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>createMethodHandle</b> (std::function&lt; ReturnType(ParamTypes...)&gt; method, std::index_sequence&lt; index... &gt;)</td></tr>
 <tr class="separator:add6ed67c6850e801e8b41c1ed9ee0d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8e185b3cab6baec52592ac6b306cf5f"><td class="memTemplParams" colspan="2"><a id="ac8e185b3cab6baec52592ac6b306cf5f"></a>
 template&lt;typename ReturnType , typename... ParamTypes&gt; </td></tr>
-<tr class="memitem:ac8e185b3cab6baec52592ac6b306cf5f"><td class="memTemplItemLeft" align="right" valign="top">MethodHandle&#160;</td><td class="memTemplItemRight" valign="bottom"><b>methodHandle</b> (std::function&lt; ReturnType(ParamTypes...)&gt; method)</td></tr>
+<tr class="memitem:ac8e185b3cab6baec52592ac6b306cf5f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacejsonrpccxx.html#acd853e802939299ead7029a5038e38a8">MethodHandle</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>methodHandle</b> (std::function&lt; ReturnType(ParamTypes...)&gt; method)</td></tr>
 <tr class="separator:ac8e185b3cab6baec52592ac6b306cf5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5c94f1d19a36b31063e0eb2f8b76673"><td class="memTemplParams" colspan="2"><a id="af5c94f1d19a36b31063e0eb2f8b76673"></a>
 template&lt;typename ReturnType , typename... ParamTypes&gt; </td></tr>
-<tr class="memitem:af5c94f1d19a36b31063e0eb2f8b76673"><td class="memTemplItemLeft" align="right" valign="top">MethodHandle&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetHandle</b> (std::function&lt; ReturnType(ParamTypes...)&gt; f)</td></tr>
+<tr class="memitem:af5c94f1d19a36b31063e0eb2f8b76673"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacejsonrpccxx.html#acd853e802939299ead7029a5038e38a8">MethodHandle</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetHandle</b> (std::function&lt; ReturnType(ParamTypes...)&gt; f)</td></tr>
 <tr class="separator:af5c94f1d19a36b31063e0eb2f8b76673"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46da6b52859f81607d535d7a6dea38a2"><td class="memTemplParams" colspan="2"><a id="a46da6b52859f81607d535d7a6dea38a2"></a>
 template&lt;typename ReturnType , typename... ParamTypes&gt; </td></tr>
-<tr class="memitem:a46da6b52859f81607d535d7a6dea38a2"><td class="memTemplItemLeft" align="right" valign="top">MethodHandle&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetHandle</b> (ReturnType(*f)(ParamTypes...))</td></tr>
+<tr class="memitem:a46da6b52859f81607d535d7a6dea38a2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacejsonrpccxx.html#acd853e802939299ead7029a5038e38a8">MethodHandle</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetHandle</b> (ReturnType(*f)(ParamTypes...))</td></tr>
 <tr class="separator:a46da6b52859f81607d535d7a6dea38a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43271746326c6d31acf7f1918dc3be96"><td class="memTemplParams" colspan="2"><a id="a43271746326c6d31acf7f1918dc3be96"></a>
 template&lt;typename... ParamTypes, std::size_t... index&gt; </td></tr>
-<tr class="memitem:a43271746326c6d31acf7f1918dc3be96"><td class="memTemplItemLeft" align="right" valign="top">NotificationHandle&#160;</td><td class="memTemplItemRight" valign="bottom"><b>createNotificationHandle</b> (std::function&lt; void(ParamTypes...)&gt; method, std::index_sequence&lt; index... &gt;)</td></tr>
+<tr class="memitem:a43271746326c6d31acf7f1918dc3be96"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacejsonrpccxx.html#a5bc83bf0cfbb2c4490746c9caba6b771">NotificationHandle</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>createNotificationHandle</b> (std::function&lt; void(ParamTypes...)&gt; method, std::index_sequence&lt; index... &gt;)</td></tr>
 <tr class="separator:a43271746326c6d31acf7f1918dc3be96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a779bc68620ce4289ad32e7ba3dd490"><td class="memTemplParams" colspan="2"><a id="a9a779bc68620ce4289ad32e7ba3dd490"></a>
 template&lt;typename... ParamTypes&gt; </td></tr>
-<tr class="memitem:a9a779bc68620ce4289ad32e7ba3dd490"><td class="memTemplItemLeft" align="right" valign="top">NotificationHandle&#160;</td><td class="memTemplItemRight" valign="bottom"><b>notificationHandle</b> (std::function&lt; void(ParamTypes...)&gt; method)</td></tr>
+<tr class="memitem:a9a779bc68620ce4289ad32e7ba3dd490"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacejsonrpccxx.html#a5bc83bf0cfbb2c4490746c9caba6b771">NotificationHandle</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>notificationHandle</b> (std::function&lt; void(ParamTypes...)&gt; method)</td></tr>
 <tr class="separator:a9a779bc68620ce4289ad32e7ba3dd490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e428519dcffe43dabca6b9788ebc3c7"><td class="memTemplParams" colspan="2"><a id="a1e428519dcffe43dabca6b9788ebc3c7"></a>
 template&lt;typename... ParamTypes&gt; </td></tr>
-<tr class="memitem:a1e428519dcffe43dabca6b9788ebc3c7"><td class="memTemplItemLeft" align="right" valign="top">NotificationHandle&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetHandle</b> (std::function&lt; void(ParamTypes...)&gt; f)</td></tr>
+<tr class="memitem:a1e428519dcffe43dabca6b9788ebc3c7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacejsonrpccxx.html#a5bc83bf0cfbb2c4490746c9caba6b771">NotificationHandle</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetHandle</b> (std::function&lt; void(ParamTypes...)&gt; f)</td></tr>
 <tr class="separator:a1e428519dcffe43dabca6b9788ebc3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62246995be9dbcbe756b613718ea7e86"><td class="memTemplParams" colspan="2"><a id="a62246995be9dbcbe756b613718ea7e86"></a>
 template&lt;typename... ParamTypes&gt; </td></tr>
-<tr class="memitem:a62246995be9dbcbe756b613718ea7e86"><td class="memTemplItemLeft" align="right" valign="top">NotificationHandle&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetHandle</b> (void(*f)(ParamTypes...))</td></tr>
+<tr class="memitem:a62246995be9dbcbe756b613718ea7e86"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacejsonrpccxx.html#a5bc83bf0cfbb2c4490746c9caba6b771">NotificationHandle</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetHandle</b> (void(*f)(ParamTypes...))</td></tr>
 <tr class="separator:a62246995be9dbcbe756b613718ea7e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3be68dc4a5b4726c5dcc50adbda4f685"><td class="memTemplParams" colspan="2"><a id="a3be68dc4a5b4726c5dcc50adbda4f685"></a>
 template&lt;typename T , typename ReturnType , typename... ParamTypes&gt; </td></tr>
-<tr class="memitem:a3be68dc4a5b4726c5dcc50adbda4f685"><td class="memTemplItemLeft" align="right" valign="top">MethodHandle&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetHandle</b> (ReturnType(T::*method)(ParamTypes...), T &amp;instance)</td></tr>
+<tr class="memitem:a3be68dc4a5b4726c5dcc50adbda4f685"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacejsonrpccxx.html#acd853e802939299ead7029a5038e38a8">MethodHandle</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetHandle</b> (ReturnType(T::*method)(ParamTypes...), T &amp;instance)</td></tr>
 <tr class="separator:a3be68dc4a5b4726c5dcc50adbda4f685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52dec44368ed79e892876c5a226d4abb"><td class="memTemplParams" colspan="2"><a id="a52dec44368ed79e892876c5a226d4abb"></a>
 template&lt;typename T , typename... ParamTypes&gt; </td></tr>
-<tr class="memitem:a52dec44368ed79e892876c5a226d4abb"><td class="memTemplItemLeft" align="right" valign="top">NotificationHandle&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetHandle</b> (void(T::*method)(ParamTypes...), T &amp;instance)</td></tr>
+<tr class="memitem:a52dec44368ed79e892876c5a226d4abb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacejsonrpccxx.html#a5bc83bf0cfbb2c4490746c9caba6b771">NotificationHandle</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetHandle</b> (void(T::*method)(ParamTypes...), T &amp;instance)</td></tr>
 <tr class="separator:a52dec44368ed79e892876c5a226d4abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>wrapper namespace of json-rpc-cxx library </p>
 </div></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacejsonrpccxx.html">jsonrpccxx</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
 </body>
 </html>

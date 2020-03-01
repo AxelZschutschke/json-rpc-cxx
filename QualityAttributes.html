@@ -5,10 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>json-rpc-cxx: quality attributes</title>
+<title>json-rpc-cxx: Quality Attributes</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -45,6 +52,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('QualityAttributes.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,53 +81,43 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">quality attributes </div>  </div>
+<div class="title">Quality Attributes </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md3"></a>
-overview</h1>
+Overview</h1>
 <p>Functional and non-functional (NFR) requirements are formulated for the development of the system, describing what (functional requirements) and how (non functional requirements) a system is perfoming its work.</p>
 <div class="dotgraph">
-<img src="dot_inline_dotgraph_1.png" alt="dot_inline_dotgraph_1.png" border="0" usemap="#dot_inline_dotgraph_1.map"/>
-<map name="dot_inline_dotgraph_1.map" id="dot_inline_dotgraph_1.map"><area shape="rect" id="clust1" href="QualityAttributes.html#FunctionalRequirements" alt="" coords="20,20,234,207"/>
-<area shape="rect" id="clust2" href="QualityAttributes.html#SecurityRequirements" alt="" coords="244,356,458,623"/>
-<area shape="rect" id="clust3" href="QualityAttributes.html#MaintainableRequirements" alt="" coords="244,20,458,346"/>
-<area shape="rect" id="clust4" href="QualityAttributes.html#EfficiencyRequirements" alt="" coords="468,20,682,207"/>
-<area shape="rect" id="clust5" href="QualityAttributes.html#ReliableRequirements" alt="" coords="468,218,682,484"/>
-<area shape="rect" id="clust6" href="QualityAttributes.html#UseableRequirements" alt="" coords="692,20,906,484"/>
-<area shape="rect" id="clust7" href="QualityAttributes.html#PortableRequirements" alt="" coords="20,218,234,554"/>
-</map>
-</div>
+<iframe scrolling="no" frameborder="0" src="dot_inline_dotgraph_1.svg" width="926" height="643"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <h2><a class="anchor" id="FunctionalRequirements"></a>
-functional requirements</h2>
+Functional Requirements</h2>
 <p>The aggregation of all aspects of the software describing what it does. Legal and safety aspects are referred to as functional requirements as well.</p>
 <p><b>features</b> able of the system to perform a certain task, usually requested by stakeholder</p>
 <p><b>safety</b> the system shall be safe to use and operate, it shall not harm persons or equipment</p>
 <p><b>legal</b> the system shall not contradict applicable law with respect to license and other obligations</p>
 <h2><a class="anchor" id="SecurityRequirements"></a>
-security requirements</h2>
+Security Requirements</h2>
 <p>Extend to which the system is protected against deliberate and intrusive faults from internal or external sources</p>
 <p><b>confidential</b> extend to which the system protects its users data and intelectual property</p>
 <p><b>integrity</b> extend to which the system is protected against unwanted modification of its internal state from internal or external sources</p>
 <p><b>available</b> timely extend to which the system is available for the users interaction and provides its functionality</p>
 <h2><a class="anchor" id="MaintainableRequirements"></a>
-maintainable requirements</h2>
+Maintainable Requirements</h2>
 <p>Extend to which the system is open for change and further development and changes are traceable and easy to apply.</p>
 <p><b>testable</b> extend to which tests can be formulated, implemented, set up and executed against the system</p>
 <p><b>traceable</b> extend to which the system can be observed regarding its working state and diagnosed in case of failures</p>
 <p><b>stable</b> extend to which the system is operable and recoverable due to diagnosis and maintenance</p>
 <p><b>modifiable</b> extend to which the system can be adapted by a) replacing components while leaving the rest of the system intact b) extending its functionality c) deploying it to new environment d) scaling it to new load conditions</p>
 <h2><a class="anchor" id="ReliableRequirements"></a>
-reliabiltiy requirements</h2>
+Reliabiltiy Requirements</h2>
 <p>Able of the system to maintain its performance level for fixed and predefined conditions over a given amount of time.</p>
 <p><b>fault tolerant</b> extend to which the system maintains its functionality and performance in case of internal errors or misuse of interfaces</p>
 <p><b>recoverable</b> extend to which the system is able to resume normal operation after failures</p>
 <p><b>available</b> the amount of system failures over time</p>
 <h2><a class="anchor" id="UseableRequirements"></a>
-useable requirements</h2>
+Useable Requirements</h2>
 <p>Extend to which the system software helps the user to easily set up, configure and use the system.</p>
 <p><b>accessible</b> extend to which the system is useable by users without dedicated training and without technical background</p>
 <p><b>fault tolerance</b> in terms of useable: ease for the user to perceive failure states and correct them</p>
@@ -114,23 +126,26 @@ useable requirements</h2>
 <p><b>learnable / understandable</b> effort for the user to learn using the system, including well structured documentation.</p>
 <p><b>adequacy</b> the system shall provide the adequate functionality easily, meaning with low user interaction required and shall present expected behavior.</p>
 <h2><a class="anchor" id="EfficiencyRequirements"></a>
-efficiency requirements</h2>
+Efficiency Requirements</h2>
 <p>Extend to which the system is interacting with the hardware and time resources.</p>
 <p><b>timing</b> latency and throughput of the system</p>
 <p><b>resource utilization</b> during operation at different load levels and during standby and idle mode, incl. cpu, memory, disk, network, ...</p>
 <h2><a class="anchor" id="PortableRequirements"></a>
-portable requirements</h2>
+Portable Requirements</h2>
 <p>Effort to bring the system to a different environment.</p>
 <p><b>installable</b> ease of deployment of the system</p>
 <p><b>replaceable</b> effort to replace the system or individual components by new versions or alternatives</p>
 <p><b>coexistence</b> option to run functional identical software components in parallel</p>
 <p><b>adaptable</b> extend to which the system is independend of other components (software and hardware) </p>
 </div></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
 </body>
 </html>

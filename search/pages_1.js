@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['definitions',['definitions',['../Definitions.html',1,'']]]
+  ['definitions',['Definitions',['../Definitions.html',1,'']]]
 ];
