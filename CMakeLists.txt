@@ -9,6 +9,7 @@ option(DOXYGEN "Build documentation" ON)
 option(CPPCHECK "Enable cppcheck" OFF)
 
 include(GNUInstallDirs)
+include(ExternalProject)
 
 add_library(json-rpc-cxx INTERFACE)
 target_include_directories(json-rpc-cxx INTERFACE include)
@@ -17,15 +18,34 @@ install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 add_library(coverage_config INTERFACE)
 
 if (COMPILE_TESTS)
+    enable_testing()
     if (CODE_COVERAGE)
         message("Enabled coverage flags")
         target_compile_options(coverage_config INTERFACE -O0 -g --coverage)
         target_link_libraries(coverage_config INTERFACE --coverage)
     endif ()
+    
+    ExternalProject_Add( googletest
+      GIT_REPOSITORY https://github.com/google/googletest.git
+      PREFIX ${CMAKE_CURRENT_BINARY_DIR}/gtest
+      INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}
+      CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_CURRENT_BINARY_DIR}/gtest -DBUILD_SHARED_LIBS=ON
+      )
+
+    file( GLOB GTEST_FILES test/unit/*)
+    foreach( FILENAME ${GTEST_FILES} )
+      get_filename_component( TESTNAME ${FILENAME} NAME_WE )
+      link_directories( ${CMAKE_CURRENT_BINARY_DIR}/gtest/lib )
+      add_executable(  ${TESTNAME} ${FILENAME} )
+      add_dependencies( ${TESTNAME} googletest )
+      target_include_directories( ${TESTNAME} PRIVATE vendor ${CMAKE_CURRENT_BINARY_DIR}/gtest/include )
+      target_link_libraries( ${TESTNAME} json-rpc-cxx gtest gmock )
+      add_test( NAME ${TESTNAME} COMMAND ${TESTNAME} )
+    endforeach()
+
     add_executable(jsonrpccpp-test test/main.cpp test/client.cpp test/typemapper.cpp test/dispatcher.cpp test/server.cpp test/batchclient.cpp test/testclientconnector.hpp examples/warehouse/warehouseapp.cpp test/warehouseapp.cpp)
     target_include_directories(jsonrpccpp-test PRIVATE vendor examples)
     target_link_libraries(jsonrpccpp-test coverage_config json-rpc-cxx)
-    enable_testing()
     add_test(NAME catch COMMAND jsonrpccpp-test -r junit -o unit.xml )
 endif ()
 
@@ -40,7 +60,7 @@ endif ()
 if( CPPCHECK )
   find_program( CPPCHECK_EXECUTABLE NAMES cppcheck )
   if( CPPCHECK_EXECUTABLE )
-    file(GLOB CPPCHECK_IN ${CMAKE_CURRENT_SOURCE_DIR}/examples/warehouse/* test/* )
+    file(GLOB CPPCHECK_IN ${CMAKE_CURRENT_SOURCE_DIR}/examples/warehouse/* test/* test/unit/* )
     set(CPPCHECK_INCLUDE_DIRS -I${CMAKE_CURRENT_SOURCE_DIR} -I${CMAKE_CURRENT_SOURCE_DIR}/include -I${CMAKE_CURRENT_SOURCE_DIR}/vendor -I${CMAKE_CURRENT_SOURCE_DIR}/examples )
     set(CPPCHECK_OPTIONS --xml --language=c++ --std=c++14 --enable=all --inconclusive )
     set(CPPCHECK_OUT --output-file=${CMAKE_CURRENT_BINARY_DIR}/cppcheck.xml )
