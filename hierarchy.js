@@ -27,6 +27,9 @@ var hierarchy =
     [ "Test::SomeClass", "classTest_1_1SomeClass.html", null ],
     [ "Test::TestServer", "classTest_1_1TestServer.html", null ],
     [ "Test::TestAPI::TestServerConnector", "classTest_1_1TestAPI_1_1TestServerConnector.html", null ],
+    [ "TestWithParam", null, [
+      [ "type_name_Tester", "classtype__name__Tester.html", null ]
+    ] ],
     [ "jsonrpccxx::type< T >", "structjsonrpccxx_1_1type.html", null ],
     [ "version", "classversion.html", null ],
     [ "WareHouseClient", "classWareHouseClient.html", null ],

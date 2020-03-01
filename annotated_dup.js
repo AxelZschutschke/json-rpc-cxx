@@ -19,6 +19,7 @@ var annotated_dup =
     [ "CppHttpLibServerConnector", "classCppHttpLibServerConnector.html", "classCppHttpLibServerConnector" ],
     [ "InMemoryConnector", "classInMemoryConnector.html", "classInMemoryConnector" ],
     [ "Product", "structProduct.html", "structProduct" ],
+    [ "type_name_Tester", "classtype__name__Tester.html", null ],
     [ "version", "classversion.html", null ],
     [ "WareHouseClient", "classWareHouseClient.html", "classWareHouseClient" ],
     [ "WarehouseServer", "classWarehouseServer.html", "classWarehouseServer" ]
