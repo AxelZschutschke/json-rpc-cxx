@@ -2,15 +2,18 @@
 
 #include "common.hpp"
 #include "nlohmann/json.hpp"
+
 #include <functional>
 #include <limits>
 #include <utility>
 #include <vector>
 
+using namespace std::string_literals;
+
 namespace jsonrpccxx {
-  typedef std::vector<json> Parameters;
-  typedef std::function<json(const Parameters &)> MethodHandle;
-  typedef std::function<void(const Parameters &)> NotificationHandle;
+  typedef std::vector<json> Parameters; //!< variable amount of json (variate) parameters
+  typedef std::function<json(const Parameters &)> MethodHandle; //!< rpc callback type returning a json
+  typedef std::function<void(const Parameters &)> NotificationHandle; //!< rpc callback type returning void
 
   // Workaround due to forbidden partial template function specialisation
   template <typename T>
@@ -36,24 +39,27 @@ namespace jsonrpccxx {
   constexpr json::value_t GetType(type<unsigned int>) { return json::value_t::number_unsigned; }
   constexpr json::value_t GetType(type<unsigned long>) { return json::value_t::number_unsigned; }
 
-  inline std::string type_name(json::value_t t) {
+  /*!
+   * \brief get string representation of a json::value_t object
+   */
+  inline std::string type_name(json::value_t const & t) {
     switch (t) {
     case json::value_t::number_integer:
-      return "integer";
+      return "integer"s;
     case json::value_t::boolean:
-      return "boolean";
+      return "boolean"s;
     case json::value_t::number_float:
-      return "float";
+      return "float"s;
     case json::value_t::number_unsigned:
-      return "unsigned integer";
+      return "unsigned integer"s;
     case json::value_t::object:
-      return "object";
+      return "object"s;
     case json::value_t::array:
-      return "array";
+      return "array"s;
     case json::value_t::string:
-      return "string";
+      return "string"s;
     default:
-      return "null";
+      return "null"s;
     }
   }
 

@@ -6,6 +6,7 @@ option(COMPILE_TESTS "Enable tests" ON)
 option(COMPILE_EXAMPLES "Enable examples" ON)
 option(CODE_COVERAGE "Enable coverage reporting" OFF)
 option(DOXYGEN "Build documentation" ON)
+option(CPPCHECK "Enable cppcheck" OFF)
 
 include(GNUInstallDirs)
 
@@ -36,6 +37,21 @@ if (COMPILE_EXAMPLES)
     add_test(NAME example COMMAND example-warehouse)
 endif ()
 
+if( CPPCHECK )
+  find_program( CPPCHECK_EXECUTABLE NAMES cppcheck )
+  if( CPPCHECK_EXECUTABLE )
+    file(GLOB CPPCHECK_IN ${CMAKE_CURRENT_SOURCE_DIR}/examples/warehouse/* test/* )
+    set(CPPCHECK_INCLUDE_DIRS -I${CMAKE_CURRENT_SOURCE_DIR} -I${CMAKE_CURRENT_SOURCE_DIR}/include -I${CMAKE_CURRENT_SOURCE_DIR}/vendor -I${CMAKE_CURRENT_SOURCE_DIR}/examples )
+    set(CPPCHECK_OPTIONS --xml --language=c++ --std=c++14 --enable=all --inconclusive )
+    set(CPPCHECK_OUT --output-file=${CMAKE_CURRENT_BINARY_DIR}/cppcheck.xml )
+    add_custom_target( cppcheck ALL
+      COMMAND ${CPPCHECK_EXECUTABLE} ${CPPCHECK_OUT} ${CPPCHECK_OPTIONS} ${CPPCHECK_INCLUDE_DIRS} ${CPPCHECK_IN}
+      COMMENT "Running cppcheck"
+      VERBATIM )
+  else()
+    message( "cppcheck need to be installed to generate the cppcheck report" )
+  endif()
+endif()
 
 if ( DOXYGEN )
     # check if Doxygen is installed

@@ -11,7 +11,7 @@ using namespace std;
 
 class WareHouseClient {
 public:
-  explicit WareHouseClient(JsonRpcClient &client) : client(client) {}
+  WareHouseClient(JsonRpcClient &client) : client(client) {}
   bool AddProduct(const Product &p) { return client.CallMethod<bool>(1, "AddProduct", {p}); }
   Product GetProduct(const std::string &id) { return client.CallMethod<Product>(1, "GetProduct", {id}); }
 
@@ -50,7 +50,7 @@ int main() {
   CppHttpLibServerConnector httpServer(rpcServer, 8484);
   cout << "Starting http server: " << std::boolalpha << httpServer.StartListening() << "\n";
   CppHttpLibClientConnector httpClient("localhost", 8484);
-  std::this_thread::sleep_for(0.5s);
+  std::this_thread::sleep_for(1.0s);
   doWarehouseStuff(httpClient);
 
   return 0;
