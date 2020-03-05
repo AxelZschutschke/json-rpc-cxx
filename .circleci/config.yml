@@ -39,9 +39,9 @@ jobs:
       - run:
           name: Build
           command: cmake -DDOXYGEN=OFF -DCOMPILE_TESTS=ON -DCOMPILE_EXAMPLES=ON -DCODE_COVERAGE=ON . && cmake --build .
-      - run:
-          name: Run tests
-          command: ./jsonrpccpp-test -s
+       - run:
+          name: Test
+          command: ctest
       - run:
           name: Create coverage report
           command: lcov --directory . --capture --output-file coverage.info && lcov --remove coverage.info '/usr/*' --output-file coverage.info
@@ -80,9 +80,9 @@ jobs:
       - run:
           name: Build
           command: cmake -DCOMPILE_TESTS=ON -DCOMPILE_EXAMPLES=ON . && cmake --build .
-      - run:
-          name: Run tests
-          command: ./jsonrpccpp-test -s
+       - run:
+          name: Test
+          command: ctest
       - run:
           name: Run example
           command: ./example-warehouse
