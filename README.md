@@ -5,6 +5,7 @@
 ![GitHub](https://img.shields.io/github/license/AxelZschutschke/json-rpc-cxx.svg)
 [![codecov](https://codecov.io/gh/AxelZschutschke/json-rpc-cxx/branch/master/graph/badge.svg)](https://codecov.io/gh/AxelZschutschke/json-rpc-cxx)
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/AxelZschutschke/json-rpc-cxx.svg)
+[doxygen](https://axelzschutschke.github.io/json-rpc-cxx/)
 
 ![json-rpc-cxx-icon](doc/icon.png)
 
