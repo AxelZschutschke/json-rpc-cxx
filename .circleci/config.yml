@@ -39,7 +39,7 @@ jobs:
       - run:
           name: Build
           command: cmake -DDOXYGEN=OFF -DCOMPILE_TESTS=ON -DCOMPILE_EXAMPLES=ON -DCODE_COVERAGE=ON . && cmake --build .
-       - run:
+      - run:
           name: Test
           command: ctest
       - run:
