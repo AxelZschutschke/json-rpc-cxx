@@ -9,6 +9,7 @@ option(DOXYGEN "Build documentation" ON)
 option(CPPCHECK "Enable cppcheck" OFF)
 option(CCCC "Enable cccc" OFF)
 
+include(CTest)
 include(GNUInstallDirs)
 include(ExternalProject)
 

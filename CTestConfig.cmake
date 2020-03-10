@@ -1,0 +1,5 @@
+set( CTEST_PROJECT_NAME "Json-Rpc-Cxx" )
+set( CTEST_DROP_METHOD "http" )
+set( CTEST_DROP_SITE "172.18.0.3" )
+set(CTEST_DROP_LOCATION "/submit.php?project=Json-Rpc-Cxx")
+set(CTEST_DROP_SITE_CDASH TRUE)
