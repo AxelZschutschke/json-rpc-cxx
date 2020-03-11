@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quality_20attributes',['Quality Attributes',['../QualityAttributes.html',1,'']]]
+  ['result',['result',['../structjsonrpccxx_1_1JsonRpcResponse.html#af46db48cee63616743e6be56cf384188',1,'jsonrpccxx::JsonRpcResponse']]]
 ];

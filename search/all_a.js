@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['result',['result',['../structjsonrpccxx_1_1JsonRpcResponse.html#af46db48cee63616743e6be56cf384188',1,'jsonrpccxx::JsonRpcResponse']]]
+  ['server2',['Server2',['../structTest_1_1Server2.html',1,'Test']]],
+  ['someclass',['SomeClass',['../classTest_1_1SomeClass.html',1,'Test']]]
 ];
