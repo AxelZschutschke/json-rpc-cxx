@@ -80,7 +80,7 @@ jobs:
       - run:
           name: Build
           command: cmake -DCOMPILE_TESTS=ON -DCOMPILE_EXAMPLES=ON . && cmake --build .
-       - run:
+      - run:
           name: Test
           command: ctest
       - run:
