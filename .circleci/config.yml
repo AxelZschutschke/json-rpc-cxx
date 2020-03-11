@@ -61,10 +61,9 @@ jobs:
           command: 'apt-get update && apt-get install -y clang cmake git'
       - run:
           name: Build
-          command: cmake -DCOMPILE_TESTS=ON -DCOMPILE_EXAMPLES=ON . && cmake --build .
       - run:
-          name: Run tests
-          command: ./jsonrpccpp-test -s
+          name: Test
+          command: ctest
       - run:
           name: Run example
           command: ./example-warehouse
